@@ -14,14 +14,14 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
  
-	# Define on which hard drive you want to install Grub.
+  # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sdc";
 
   networking.hostName = "sky";
 
   # Select internationalisation properties.
   i18n = {
-  	consoleFont = "Lat2-Terminus16";
+    consoleFont = "Lat2-Terminus16";
     consoleKeyMap = "uk";
     defaultLocale = "en_ie.utf-8";
   };
@@ -40,16 +40,13 @@
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "16.03";
-	
-	environment = {
-		systemPackages = with pkgs; [						
-			git
-			vim
-		];
-	};
-	
-	# Enable xen
-	virtualisation.xen.enable = true;
-	virtualisation.xen.domain0MemorySize = 512;
-	
+  
+  environment.systemPackages = let
+    vimPackages = import ./vim/vimPackages.nix pkgs;
+  in vimPackages;
+  
+  # Enable xen
+  virtualisation.xen.enable = true;
+  virtualisation.xen.domain0MemorySize = 512;
+  
 }
