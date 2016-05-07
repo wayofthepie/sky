@@ -23,7 +23,7 @@
   i18n = {
     consoleFont = "Lat2-Terminus16";
     consoleKeyMap = "uk";
-    defaultLocale = "en_ie.utf-8";
+    defaultLocale = "en_IE.utf-8";
   };
 
   # Set your time zone.
@@ -43,7 +43,7 @@
   
   environment.systemPackages = let
     vimPackages = import ./vim/vimPackages.nix pkgs;
-  in vimPackages;
+  in with pkgs; [ git ] ++ vimPackages ;
   
   # Enable xen
   virtualisation.xen.enable = true;
