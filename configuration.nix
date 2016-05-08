@@ -56,4 +56,10 @@
   # Docker setup
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "overlay";
+
+
+  # Bash setup
+  programs.bash.shellInit = ''
+    export EDITOR=vim
+  '';
 }
