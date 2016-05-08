@@ -11,6 +11,7 @@ in {
     pluginDictionaries = [
       # from pkgs.vimPlugins
       { name = "youcompleteme"; }
+      { name = "nerdtree"; }
 
       # from your own plugin package set
       { name = "vim-trailing-whitespace";  }
