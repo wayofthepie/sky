@@ -9,6 +9,7 @@ let
 
   vim = lib.overrideDerivation custom_vim (o: {
     ftNixSupport  = true;
+    luaSupport = true;
   });
 
 in [
@@ -16,4 +17,4 @@ in [
   pkgs.python
   pkgs.ctags
 ]
-		
+

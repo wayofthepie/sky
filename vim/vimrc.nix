@@ -1,6 +1,6 @@
 { stdenv, writeText }:
 
-let 
+let
   general = builtins.readFile ./vimrc/general.vim;
 in
   ''
