@@ -12,6 +12,15 @@ in {
       # from pkgs.vimPlugins
       { name = "youcompleteme"; }
       { name = "nerdtree"; }
+      { name = "ctrlp"; }
+      { name = "ghcmod"; }
+      { name = "neco-ghc"; }
+      { name = "Syntastic"; }
+      { name = "snipmate"; }
+      { name = "nerdcommenter"; }
+      { name = "tabular"; }
+      { name = "supertab"; }
+      { name = "neocomplete-vim"; }
 
       # from your own plugin package set
       { name = "vim-trailing-whitespace";  }

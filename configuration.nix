@@ -47,6 +47,9 @@
       docker
       git
       nmap
+
+      # Haskell packages
+      haskellPackages.stack
     ];
 
   # Enable xen
