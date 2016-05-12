@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      # Gui config, xmonad
+      ./xmonad/xmonadSetup.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -46,20 +48,19 @@
   in with pkgs; vimPackages ++ [
       docker
       git
+      gnumake
       nmap
-
-      # Haskell packages
-      haskellPackages.stack
+      stdenv
+      which
     ];
 
   # Enable xen
   virtualisation.xen.enable = true;
-  virtualisation.xen.domain0MemorySize = 4096;
+  #virtualisation.xen.domain0MemorySize = 4096;
 
   # Docker setup
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "overlay";
-
 
   # Bash setup
   programs.bash.shellInit = ''
