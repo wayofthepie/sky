@@ -1,12 +1,12 @@
 
 { config, pkgs, ... }:
 
-
 {
 
   # Gui setup
   services.xserver = {
     enable = true;
+    layout = "gb";
     displayManager.lightdm.enable = true;
 
     windowManager.default = "xmonad";

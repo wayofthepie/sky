@@ -8,6 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      # Account setup, etc...
+      ./security/user.nix
+
       # Gui config, xmonad
       ./xmonad/xmonadSetup.nix
     ];
@@ -49,6 +53,7 @@
       docker
       git
       gnumake
+      idea.idea-community
       nmap
       stdenv
       which
@@ -66,4 +71,6 @@
   programs.bash.shellInit = ''
     export EDITOR=vim
   '';
+
+  nixpkgs.config.allowUnfree = true;
 }
