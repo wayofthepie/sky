@@ -2,8 +2,7 @@
 { config, pkgs, ... }:
 
 {
-
-  # Gui setup
+  hardware.opengl.enable = true;
   services.xserver = {
     enable = true;
     layout = "gb";
@@ -13,9 +12,17 @@
     windowManager.xmonad.enable = true;
     windowManager.xmonad.enableContribAndExtras = true;
 
-    desktopManager.default = "xfce";
-    desktopManager.xfce.enable = true;
-    desktopManager.xterm.enable = false;
+    #desktopManager.default = "xfce";
+    #desktopManager.xfce.enable = true;
+    #desktopManager.xterm.enable = false;
+
+    videoDrivers = [ "nvidia" ];
+    config = ''
+      Section "Device"
+        Identifier "Nvidia Card"
+        Option "GLXVBlank" "on"
+      EndSection
+    '';
   };
 
 }

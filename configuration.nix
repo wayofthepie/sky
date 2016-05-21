@@ -14,6 +14,9 @@
 
       # Gui config, xmonad
       ./xmonad/xmonadSetup.nix
+
+      # Sound config
+      ./sound/setup.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -51,16 +54,21 @@
     vimPackages = import ./vim/vimPackages.nix pkgs;
   in with pkgs; vimPackages ++ [
       docker
+      compton
       git
       gnumake
-      idea.idea-community
       nmap
       stdenv
       which
+
+      # JVM dev setup
+      openjdk
+      idea.idea-community
     ];
 
-  # Enable xen
-  virtualisation.xen.enable = true;
+  # Note that we cannot enable xen and the nvidia drivers,
+  # the proprietary drivers do not work in dom0.
+  #virtualisation.xen.enable = true;
   #virtualisation.xen.domain0MemorySize = 4096;
 
   # Docker setup
