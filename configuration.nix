@@ -13,7 +13,7 @@
       ./security/user.nix
 
       # Gui config, xmonad
-      ./xmonad/xmonadSetup.nix
+      ./gfx/xmonadSetup.nix
 
       # Sound config
       ./sound/setup.nix
@@ -49,21 +49,27 @@
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "16.03";
-
+  hardware.pulseaudio.enable = true;
   environment.systemPackages = let
     vimPackages = import ./vim/vimPackages.nix pkgs;
   in with pkgs; vimPackages ++ [
-      docker
+      stdenv
+
+      # Graphics
       compton
+
+      # Development
+      docker
       git
       gnumake
-      nmap
-      stdenv
-      which
-
-      # JVM dev setup
-      openjdk
       idea.idea-community
+      openjdk
+
+      # Tools
+      mplayer
+      nmap
+      unzip
+      which
     ];
 
   # Note that we cannot enable xen and the nvidia drivers,
