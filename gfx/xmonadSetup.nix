@@ -6,7 +6,7 @@
   services.xserver = {
     enable = true;
     layout = "gb";
-    displayManager.lightdm.enable = true;
+    displayManager.kdm.enable = true;
 
     windowManager.default = "xmonad";
     windowManager.xmonad.enable = true;
@@ -23,6 +23,7 @@
         Option "GLXVBlank" "on"
       EndSection
     '';
+
   };
 
 }
