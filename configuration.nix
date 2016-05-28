@@ -17,6 +17,7 @@
 
       # Sound config
       ./sound/setup.nix
+
     ];
 
   # Use the GRUB 2 boot loader.
@@ -46,7 +47,6 @@
   #   isNormalUser = true;
   #   uid = 1000;
   # };
-
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "16.03";
   hardware.pulseaudio.enable = true;
@@ -68,6 +68,7 @@
 
       haskellPackages.stack
       haskell.compiler.ghc7103
+      haskell.compiler.ghcjs
       z3
 
       # Tools
