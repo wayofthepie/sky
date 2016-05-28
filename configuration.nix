@@ -54,6 +54,7 @@
     vimPackages = import ./vim/vimPackages.nix pkgs;
   in with pkgs; vimPackages ++ [
       stdenv
+      google-chrome
 
       # Graphics
       compton
@@ -64,6 +65,10 @@
       gnumake
       idea.idea-community
       openjdk
+
+      haskellPackages.stack
+      haskell.compiler.ghc801
+      z3
 
       # Tools
       mplayer
