@@ -67,7 +67,7 @@
       openjdk
 
       haskellPackages.stack
-      haskell.compiler.ghc801
+      haskell.compiler.ghc7103
       z3
 
       # Tools
